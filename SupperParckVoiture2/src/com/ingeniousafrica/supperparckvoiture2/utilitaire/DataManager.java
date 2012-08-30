@@ -15,7 +15,7 @@ import android.content.Context;
  * @author w.begbessou
  * @version 1.0
  */
-public class DataManeger{
+public class DataManager{
 	
 	public static void saveData(Context context, String key, final Object data, boolean temp){
 		synchronized (data) {

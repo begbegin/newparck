@@ -24,11 +24,11 @@ public final class R {
         public static final int LinearLayout1=0x7f06002a;
         public static final int RelativeLayout1=0x7f060015;
         public static final int TextView1=0x7f060013;
+        public static final int activity_afficheclientvoiture_button_back=0x7f06002e;
         public static final int activity_client_button_continuer=0x7f060016;
-        public static final int activity_client_button_list_voiture=0x7f060017;
-        public static final int activity_client_name_edit=0x7f06001b;
-        public static final int activity_client_prenom_edit=0x7f060018;
-        public static final int activity_client_title_id=0x7f06001a;
+        public static final int activity_client_name_edit=0x7f06001a;
+        public static final int activity_client_prenom_edit=0x7f060017;
+        public static final int activity_client_title_id=0x7f060019;
         public static final int activity_fabrication_ajout_parck_button=0x7f060009;
         public static final int activity_fabrication_button_back=0x7f060002;
         public static final int activity_fabrication_button_fabriquer=0x7f060001;
@@ -42,8 +42,9 @@ public final class R {
         public static final int activity_fabrique_carrosserie_spin=0x7f060010;
         public static final int activity_fabrique_description_voiture_edit=0x7f060014;
         public static final int activity_fabrique_model_edit=0x7f06000b;
+        public static final int activity_main_button_parck=0x7f06001c;
         public static final int activity_parck_listview_listclient=0x7f06001f;
-        public static final int button1=0x7f06001e;
+        public static final int activity_parck_toutes_voitures_button=0x7f06001e;
         public static final int imageView1=0x7f060020;
         public static final int item_client_name_text=0x7f060021;
         public static final int item_client_prenom_text=0x7f060022;
@@ -63,8 +64,8 @@ public final class R {
         public static final int textView2=0x7f060003;
         public static final int textView3=0x7f060006;
         public static final int textView4=0x7f060004;
-        public static final int textView5=0x7f06001c;
-        public static final int textView6=0x7f060019;
+        public static final int textView5=0x7f06001b;
+        public static final int textView6=0x7f060018;
         public static final int textView7=0x7f060012;
         public static final int textView8=0x7f06000f;
     }
@@ -80,6 +81,7 @@ public final class R {
         public static final int list_voiture=0x7f030008;
     }
     public static final class string {
+        public static final int activity_afficheclientvoiture_button_back_text=0x7f050024;
         public static final int activity_client_button_continuer_msg=0x7f05000d;
         public static final int activity_client_button_list_voiture_msg=0x7f050018;
         public static final int activity_client_carrosserie=0x7f05000a;
@@ -106,6 +108,7 @@ public final class R {
         public static final int activity_fabrication_title=0x7f05000e;
         public static final int activity_fabrique_button_anuler_msg=0x7f05001e;
         public static final int activity_fabrique_button_valider_msg=0x7f05001f;
+        public static final int activity_main_button_parck_text=0x7f050025;
         public static final int activity_parck_button_retour=0x7f050013;
         public static final int activity_parck_infos_text=0x7f050022;
         public static final int activity_parck_list_voiture_fabriquer=0x7f050012;

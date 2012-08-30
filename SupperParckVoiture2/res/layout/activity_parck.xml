@@ -29,16 +29,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:text="@string/activity_parck_infos_text" />
-
+
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/activity_parck_toutes_voitures_button"
                 android:layout_width="106dp"
                 android:layout_height="wrap_content"
                 android:text="@string/activity_parck_tte_voiture" />
 
         </LinearLayout>
     </LinearLayout>
-
+
     <ListView
         android:id="@+id/activity_parck_listview_listclient"
         android:layout_width="wrap_content"

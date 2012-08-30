@@ -13,14 +13,6 @@
         android:layout_alignParentRight="true"
         android:text="@string/activity_client_button_continuer_msg" />
 
-    <Button
-        android:id="@+id/activity_client_button_list_voiture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:text="@string/activity_client_button_list_voiture_msg" />
-
     <EditText
         android:id="@+id/activity_client_prenom_edit"
         android:layout_width="wrap_content"
@@ -78,5 +70,13 @@
         android:text="@string/activity_client_infos_client"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="14dip" />
+
+    <Button
+        android:id="@+id/activity_main_button_parck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/activity_main_button_parck_text" />
 
 </RelativeLayout>

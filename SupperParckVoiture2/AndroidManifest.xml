@@ -19,6 +19,8 @@
         <activity android:name=".activities.Fabrication"></activity>
         <activity android:name=".activities.FabriqueVoiture"></activity>
         <activity android:name=".activities.Parck"></activity>
+        <activity android:name=".activities.AfficheClientVoiture"></activity>
+        <activity android:name=".activities.AfficheVoitures"></activity>
     </application>
 
 </manifest>

@@ -35,7 +35,9 @@
     <string name="activity_fabrique_button_valider_msg">Créer</string>
     <string name="activity_fabrication_client_name">Nom :</string>
     <string name="activity_fabrication_client_prenom">Prénom :</string>
-    <string name="activity_parck_infos_text">Cliquer sur un lient pour voir ces voitures</string>
+    <string name="activity_parck_infos_text">Cliquer sur un client pour voir ces voitures</string>
     <string name="activity_parck_tte_voiture">Toutes les voitures</string>
+    <string name="activity_afficheclientvoiture_button_back_text">Back</string>
+    <string name="activity_main_button_parck_text">Aller au parck</string>
 
 </resources>

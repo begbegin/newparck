@@ -5,10 +5,12 @@ package com.ingeniousafrica.supperparckvoiture2.metier;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map.Entry;
+
+import com.ingeniousafrica.supperparckvoiture2.utilitaire.DataManager;
 
 import android.app.Application;
 
-import com.ingeniousafrica.supperparckvoiture2.utilitaire.DataManeger;
 
 
 /**
@@ -23,8 +25,10 @@ import com.ingeniousafrica.supperparckvoiture2.utilitaire.DataManeger;
  */
 public class DataFabrication extends Application{
 	
-	private Client mClient;
+	private Client mClient = null;
+	private ArrayList<Client> mClients =  new ArrayList<Client>();
 	private ArrayList<Voiture> mVoitures = new ArrayList<Voiture>();
+	//private DataParck mDataParck;
 	private HashMap<Client, ArrayList<Voiture>> mParckVoitureClient;
 	
 	private static DataFabrication mSingletonObj;
@@ -46,10 +50,42 @@ public class DataFabrication extends Application{
 		super.onCreate();
 		mSingletonObj = this;
 		//je déserialise puis recupère les données sur le lient et les vehicules
-		mParckVoitureClient = (HashMap<Client, ArrayList<Voiture>>) DataManeger.readData(this, "donnees");
+		mParckVoitureClient = (HashMap<Client, ArrayList<Voiture>>) DataManager.readData(this, "dataParck");
+		
+		if(mParckVoitureClient == null){
+			mParckVoitureClient = new HashMap<Client, ArrayList<Voiture>>();
+		}
 	
 	}
 	
+	public void listerClient(){
+		mClients.clear();
+		for (Entry<Client, ArrayList<Voiture>> currentEntry : mParckVoitureClient.entrySet()) {
+			mClients.add(currentEntry.getKey());
+		}
+	}
+	
+	public void listerVoitures(){
+		mVoitures.clear();
+		
+		for (Entry<Client, ArrayList<Voiture>> currentEntry : mParckVoitureClient.entrySet()) {
+			mVoitures.addAll(currentEntry.getValue());
+		}
+	}
+	
+
+	public ArrayList<Client> getmClients() {
+		return mClients;
+	}
+
+
+
+	public void setmClients(ArrayList<Client> mClients) {
+		this.mClients = mClients;
+	}
+
+
+
 	public Client getmClient() {
 		return mClient;
 	}
@@ -65,15 +101,15 @@ public class DataFabrication extends Application{
 	public void setmVoitures(ArrayList<Voiture> mVoitures) {
 		this.mVoitures = mVoitures;
 	}
-
-
 	public HashMap<Client, ArrayList<Voiture>> getmParckVoitureClient() {
 		return mParckVoitureClient;
 	}
+
 	public void setmParckVoitureClient(
 			HashMap<Client, ArrayList<Voiture>> mParckVoitureClient) {
 		this.mParckVoitureClient = mParckVoitureClient;
 	}
+
 	
-	
+		
 }
