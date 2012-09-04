@@ -21,7 +21,7 @@ import com.ingeniousafrica.supperparckvoiture2.utilitaire.VoitureAdapter;
 /**
  * C'est une activité permet l'affichage de toutes les voitures des clients
  * Date de création : 30-08-2012
- * Date de modification : 30-08-2012
+ * Date de modification : 03-09-2012
  * @author w.begbessou
  * @version 1.0
  */

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="carrosseriesArray">
-        <item >Sedans</item>
-        <item >4 wheels</item>
-        <item >Bus</item>
-        <item >Trucks</item>
-        <item >Machinery and tractors</item>
+        <item >Berlines</item>
+        <item >4 roues motrices</item>
+        <item >Autobus</item>
+        <item >Camions</item>
+        <item >Machines et tracteurs</item>
     </string-array>
     <string-array name="marquesArray">
         <item >TOYOTA</item>
@@ -15,8 +15,8 @@
     </string-array>
     <string-array name="typeMoteurArray">
         <item >Diesel</item>
-        <item >Fueled</item>
-        <item >Water</item>
+        <item >Carburent</item>
+        <item >Eau</item>
     </string-array>
     <string-array name="langArray">
         <item >@string/french_string</item>

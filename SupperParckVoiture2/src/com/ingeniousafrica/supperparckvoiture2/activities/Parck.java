@@ -25,7 +25,7 @@ import com.ingeniousafrica.supperparckvoiture2.utilitaire.VoitureAdapter;
 /**
  * C'est une activité permet de gere la fabrication de voitures
  * Date de création : 29-08-2012
- * Date de modification : 30-08-2012
+ * Date de modification : 04-09-2012
  * @author w.begbessou
  * @version 1.0
  */

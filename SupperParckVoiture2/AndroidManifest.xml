@@ -21,6 +21,7 @@
         <activity android:name=".activities.Parck"></activity>
         <activity android:name=".activities.AfficheClientVoiture"></activity>
         <activity android:name=".activities.AfficheVoitures"></activity>
+        <activity android:name=".activities.PreferActivity"></activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 
@@ -19,7 +20,7 @@ import com.ingeniousafrica.supperparckvoiture2.metier.Voiture;
 /**
  * C'est une activité permettant la fabrication de voitures
  * Date de création : 29-08-2012
- * Date de modification : 29-08-2012
+ * Date de modification : 04-09-2012
  * @author w.begbessou
  * @version 1.0
  */
@@ -38,7 +39,6 @@ public class FabriqueVoiture extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_fabrique);
 		
-
 		findViewById(R.id.activity_fabrique_button_valider).setOnClickListener(this);
 		findViewById(R.id.activity_fabrique_button_annuler).setOnClickListener(this);
 		
@@ -56,38 +56,42 @@ public class FabriqueVoiture extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch(v.getId()){
 
-    	case R.id.activity_fabrique_button_valider:
-    		
-    		Voiture lV = new Voiture();
-    		
-    		lV.setmMarque(mSpMark.getSelectedItem().toString());
-    		lV.setmCarrosserie(mSpCarro.getSelectedItem().toString());
-    		lV.setmMoteur(mSpMoteur.getSelectedItem().toString());
-    		lV.setmModel(mModel.getText().toString());
-    		lV.setmDescription(mDescription.getText().toString());
-    		lV.setmAnnee((new Date()).toGMTString());
-    		
-    		//je recupère ma liste de voiture pour le client en cour
-    		ArrayList<Voiture> lListV = DataFabrication.getInstence().getmVoitures();
-    		lListV.add(lV);
-    		//je r
-    		DataFabrication.getInstence().setmVoitures(lListV);
-    		
-    		Intent intent = new Intent(this, Fabrication.class );
-    		
-    		setResult(RESULT_OK, intent);
-    		
-    		// je termine l'activité
-    		finish();
-    		
-    		
-    		break;
+		case R.id.activity_fabrique_button_valider:
+			String lModel = mModel.getText().toString();
+			String lDescription = mDescription.getText().toString();
+			
+			if(!lModel.equals("") && !lDescription.equals("")){
+				Voiture lV = new Voiture();
 
-    	case R.id.activity_fabrique_button_annuler:
-    		
-    		finish();
+				lV.setmMarque(mSpMark.getSelectedItem().toString());
+				lV.setmCarrosserie(mSpCarro.getSelectedItem().toString());
+				lV.setmMoteur(mSpMoteur.getSelectedItem().toString());
+				lV.setmModel(lModel);
+				lV.setmDescription(lDescription);
+				lV.setmAnnee((new Date()).toGMTString());
 
-    	}
+				//je recupère ma liste de voiture pour le client en cour
+				ArrayList<Voiture> lListV = DataFabrication.getInstence().getmVoitures();
+				lListV.add(lV);
+				//je r
+				DataFabrication.getInstence().setmVoitures(lListV);
+
+				Intent intent = new Intent(this, Fabrication.class );
+
+				setResult(RESULT_OK, intent);
+
+				// je termine l'activité
+				finish();
+			}else{
+				Toast.makeText(this, R.string.activity_champ_null_msg, 5000).show();
+			}
+			break;
+
+		case R.id.activity_fabrique_button_annuler:
+
+			finish();
+
+		}
 	}
 
 	

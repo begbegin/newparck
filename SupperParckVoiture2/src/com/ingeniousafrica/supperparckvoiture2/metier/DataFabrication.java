@@ -16,7 +16,7 @@ import android.app.Application;
 /**
  * Elle permet regroupe les informations de fabrication de voitue
  * Date de création : 28-08-2012
- * Date de modification : 28-08-2012
+ * Date de modification : 31-08-2012
  * @author w.begbessou
  * @version 1.0
  * @see Client
@@ -57,7 +57,9 @@ public class DataFabrication extends Application{
 		}
 	
 	}
-	
+	/**
+	 * Elle permet d'obtenir la liste des clients
+	 */
 	public void listerClient(){
 		mClients.clear();
 		for (Entry<Client, ArrayList<Voiture>> currentEntry : mParckVoitureClient.entrySet()) {
@@ -65,6 +67,9 @@ public class DataFabrication extends Application{
 		}
 	}
 	
+	/**
+	 * Elle permet d'obtenir la liste des voitures.
+	 */
 	public void listerVoitures(){
 		mVoitures.clear();
 		

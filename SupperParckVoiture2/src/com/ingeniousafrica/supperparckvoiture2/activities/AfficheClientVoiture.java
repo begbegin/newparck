@@ -26,7 +26,7 @@ import com.ingeniousafrica.supperparckvoiture2.utilitaire.VoitureAdapter;
 /**
  * C'est une activité permet l'affichage des voitures d'un client donnée
  * Date de création : 30-08-2012
- * Date de modification : 30-08-2012
+ * Date de modification : 04-09-2012
  * @author w.begbessou
  * @version 1.0
  */
@@ -78,23 +78,20 @@ public class AfficheClientVoiture extends Activity implements OnClickListener, O
 		case SUPPRIMER_VOITURE:
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setTitle(R.string.titre_boite_dialogue);
-			builder.setMessage("Voulez-vous supprimer cette voiture? \n\n");
-			builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
-				
+			builder.setMessage(R.string.boite_dialogue_suppr_msg);
+			builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface arg0, int arg1) {
 					DataFabrication.getInstence().getmVoitures().remove(mItemVoiture);
 					
 					//j'affiche un message pour rassurrer l'utilisateur
-					Toast.makeText(AfficheClientVoiture.this,"La voiture "+mItemVoiture.getmMarque()+" "+mItemVoiture.getmModel()+" à été supprimée", 5000).show();
+					Toast.makeText(AfficheClientVoiture.this,R.string.boite_dialogue_car_msg+mItemVoiture.getmMarque()+" "+mItemVoiture.getmModel()+R.string.boite_dialogue_car_suppr, 5000).show();
 					
 					//je reaffiche les infos dans la listview
-					mListV.setAdapter(adapter);
-					
-					
+					mListV.setAdapter(adapter);	
 				}
 			});
 			
-			builder.setNegativeButton("Non", null);
+			builder.setNegativeButton(R.string.no, null);
 			return builder.create();
 		}
 		return super.onCreateDialog(id);

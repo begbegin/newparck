@@ -27,7 +27,7 @@ import com.ingeniousafrica.supperparckvoiture2.utilitaire.VoitureAdapter;
 /**
  * C'est une activité permet de gere la fabrication de voitures
  * Date de création : 28-08-2012
- * Date de modification : 29-08-2012
+ * Date de modification : 04-09-2012
  * @author w.begbessou
  * @version 1.0
  */
@@ -82,18 +82,17 @@ public class Fabrication extends Activity implements OnClickListener, OnItemClic
         		
         		finish();
         	}else{
-        		Toast.makeText(this, "Fabriquer au moins une voiture pour ce client", 5000).show();
+        		Toast.makeText(this, R.string.activity_fabrication_obligation_msg, 5000).show();
         	}
     		
     		break;
 
     	case R.id.activity_fabrication_button_back:
-    		// je termine l'activité puis je me retrouve automatiquement sur la première page
+    		
     		finish();
 
     	}
 	}
-	
 	
 
 	@Override
@@ -116,23 +115,21 @@ public class Fabrication extends Activity implements OnClickListener, OnItemClic
 		case SUPPRIMER_VOITURE:
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setTitle(R.string.titre_boite_dialogue);
-			builder.setMessage("Voulez-vous supprimer cette voiture? \n\n");
-			builder.setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+			builder.setMessage(R.string.boite_dialogue_suppr_msg+"\n\n");
+			builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
 				
 				public void onClick(DialogInterface arg0, int arg1) {
 					DataFabrication.getInstence().getmVoitures().remove(mItemVoiture);
 					
 					//j'affiche un message pour rassurrer l'utilisateur
-					Toast.makeText(Fabrication.this,"La voiture "+mItemVoiture.getmMarque()+" "+mItemVoiture.getmModel()+" à été supprimée", 5000).show();
+					Toast.makeText(Fabrication.this,R.string.boite_dialogue_car_msg + mItemVoiture.getmMarque()+" "+mItemVoiture.getmModel()+R.string.boite_dialogue_car_suppr, 5000).show();
 					
 					//je reaffiche les infos dans la listview
-					mListV.setAdapter(adapter);
-					
-					
+					mListV.setAdapter(adapter);	
 				}
 			});
 			
-			builder.setNegativeButton("Non", null);
+			builder.setNegativeButton(R.string.no, null);
 			return builder.create();
 		}
 		return super.onCreateDialog(id);
