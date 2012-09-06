@@ -31,9 +31,9 @@ import android.widget.Toast;
  */
 public class Main extends Activity implements OnClickListener{
 	
-	private EditText name;
+	private EditText mName;
 	
-	private EditText prenom;
+	private EditText mPrenom;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -60,9 +60,9 @@ public class Main extends Activity implements OnClickListener{
 		findViewById(R.id.activity_client_button_continuer).setOnClickListener(this);
 		findViewById(R.id.activity_main_button_parck).setOnClickListener(this);
 
-		name = (EditText)findViewById(R.id.activity_client_name_edit);
+		mName = (EditText)findViewById(R.id.activity_client_name_edit);
 
-		prenom = (EditText)findViewById(R.id.activity_client_prenom_edit);
+		mPrenom = (EditText)findViewById(R.id.activity_client_prenom_edit);
 
 	}
 	    
@@ -104,9 +104,9 @@ public class Main extends Activity implements OnClickListener{
 
 			  //un objet client pour infos du client
 			  Client lClient = new Client();
-			  String lNom = name.getText().toString();
+			  String lNom = mName.getText().toString();
 
-			  String lPrenom = prenom.getText().toString();
+			  String lPrenom = mPrenom.getText().toString();
 
 			  if(!lNom.equals("") && !lPrenom.equals("")){
 				  lClient.setmNom(lNom);
@@ -133,5 +133,25 @@ public class Main extends Activity implements OnClickListener{
 		  }
 
 	  }
+
+
+	public EditText getmName() {
+		return mName;
+	}
+
+
+	public void setmName(EditText mName) {
+		this.mName = mName;
+	}
+
+
+	public EditText getmPrenom() {
+		return mPrenom;
+	}
+
+
+	public void setmPrenom(EditText mPrenom) {
+		this.mPrenom = mPrenom;
+	}
 
 }
